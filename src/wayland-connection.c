@@ -1,3 +1,4 @@
+#include "my-wayland-client.h"
 #include <asm-generic/errno-base.h>
 #include <assert.h>
 #include <errno.h>
@@ -6,9 +7,6 @@
 #include <string.h>
 #include <sys/socket.h>
 #include <sys/un.h>
-
-#define cstring_len(s) (sizeof(s) - 1)
-#define roundup_4(n) (((n) + 3) & -4)
 
 static int wayland_display_connect() {
   char *xdg_runtime_dir = getenv("XDG_RUNTIME_DIR");
